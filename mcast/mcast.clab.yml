@@ -1,0 +1,20 @@
+name: mcast
+
+topology:
+  nodes:
+
+    dc1-core1:
+      kind: ceos
+      image: ceos:4.30.1F
+
+    dc1-asw1:
+      kind: ceos
+      image: ceos:4.30.1F
+
+    dc1-svr1:
+      kind: linux
+      image: alpine
+
+  links:
+    - endpoints: ["dc1-core1:eth1", "dc1-asw1:eth1"]
+    - endpoints: ["dc1-asw1:eth2", "dc1-svr1:eth1"]
