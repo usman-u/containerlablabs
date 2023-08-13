@@ -1,0 +1,181 @@
+{
+  "name": "mcast",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-db8bbacd44de",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "2001:172:20:20::/64",
+        "ipv6-gw": "2001:172:20:20::1",
+        "mtu": "1500",
+        "external-access": true
+      }
+    }
+  },
+  "nodes": {
+    "dc1-asw1": {
+      "index": "0",
+      "shortname": "dc1-asw1",
+      "longname": "clab-mcast-dc1-asw1",
+      "fqdn": "dc1-asw1.mcast.io",
+      "group": "",
+      "labdir": "/home/usman/containerlablabs/mcast/clab-mcast/dc1-asw1",
+      "kind": "ceos",
+      "image": "ceos:4.30.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:03:91:ad",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-db8bbacd44de",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/usman/containerlablabs/mcast/clab-mcast/dc1-asw1",
+        "clab-node-name": "dc1-asw1",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/usman/containerlablabs/mcast/mcast.clab.yml",
+        "containerlab": "mcast"
+      },
+      "port-bindings": [
+      ]
+    },
+    "dc1-core1": {
+      "index": "1",
+      "shortname": "dc1-core1",
+      "longname": "clab-mcast-dc1-core1",
+      "fqdn": "dc1-core1.mcast.io",
+      "group": "",
+      "labdir": "/home/usman/containerlablabs/mcast/clab-mcast/dc1-core1",
+      "kind": "ceos",
+      "image": "ceos:4.30.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:d5:ca:59",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-db8bbacd44de",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/home/usman/containerlablabs/mcast/clab-mcast/dc1-core1",
+        "clab-node-name": "dc1-core1",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/usman/containerlablabs/mcast/mcast.clab.yml",
+        "containerlab": "mcast"
+      },
+      "port-bindings": [
+      ]
+    },
+    "dc1-svr1": {
+      "index": "2",
+      "shortname": "dc1-svr1",
+      "longname": "clab-mcast-dc1-svr1",
+      "fqdn": "dc1-svr1.mcast.io",
+      "group": "",
+      "labdir": "/home/usman/containerlablabs/mcast/clab-mcast/dc1-svr1",
+      "kind": "linux",
+      "image": "ubuntu",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-db8bbacd44de",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/usman/containerlablabs/mcast/clab-mcast/dc1-svr1",
+        "clab-node-name": "dc1-svr1",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/usman/containerlablabs/mcast/mcast.clab.yml",
+        "containerlab": "mcast"
+      },
+      "port-bindings": [
+      ]
+    },
+    "dc1-svr2": {
+      "index": "3",
+      "shortname": "dc1-svr2",
+      "longname": "clab-mcast-dc1-svr2",
+      "fqdn": "dc1-svr2.mcast.io",
+      "group": "",
+      "labdir": "/home/usman/containerlablabs/mcast/clab-mcast/dc1-svr2",
+      "kind": "linux",
+      "image": "ubuntu",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "2001:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-db8bbacd44de",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/usman/containerlablabs/mcast/clab-mcast/dc1-svr2",
+        "clab-node-name": "dc1-svr2",
+        "clab-node-type": "",
+        "clab-topo-file": "/home/usman/containerlablabs/mcast/mcast.clab.yml",
+        "containerlab": "mcast"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "dc1-core1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:ab:29:5a",
+        "peer": "z"
+      },
+      "z": {
+        "node": "dc1-asw1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:44:4e:23",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "dc1-asw1",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:6a:00:49",
+        "peer": "z"
+      },
+      "z": {
+        "node": "dc1-svr1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:84:6d:d0",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "dc1-asw1",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:b1:33:c8",
+        "peer": "z"
+      },
+      "z": {
+        "node": "dc1-svr2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:e2:31:54",
+        "peer": "a"
+      }
+    }
+  ]
+}

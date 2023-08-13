@@ -1,0 +1,55 @@
+! Startup-config last modified at Sun Aug 13 11:04:46 2023 by root
+! device: dc1-asw1 (cEOSLab, EOS-4.30.1F-32308478.4301F (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$DbFrsYYoKqi0x8jS$A/xCuHFlagPHZ0jhG5OYDaCklDIuyNfzvMB3Erm0YsGVJYlxznuMLQdfnJFqwK1sMnwr2GIg1fjQl80lF.1fK1
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname dc1-asw1
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+management api http-commands
+   no shutdown
+!
+management api gnmi
+   transport grpc default
+!
+management api netconf
+   transport ssh default
+!
+interface Ethernet1
+   description to-dc1-core1
+   no switchport
+   ip address 10.201.0.2/24
+!
+interface Ethernet2
+   description to-dc1-svr1
+   no switchport
+   ip address 10.201.1.1/24
+!
+interface Ethernet3
+!
+interface Management0
+   ip address 172.20.20.3/24
+   ipv6 address 2001:172:20:20::3/64
+!
+ip routing
+!
+ip route 0.0.0.0/0 172.20.20.1
+!
+ipv6 route ::/0 2001:172:20:20::1
+!
+router ospf 1
+   network 10.201.0.0/16 area 0.0.0.0
+   max-lsa 12000
+!
+end
