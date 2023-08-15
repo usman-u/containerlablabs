@@ -3,6 +3,7 @@ name: mcast
 topology:
   nodes:
 
+    # DC1
     dc1-core1:
       kind: ceos
       image: ceos:4.30.1F
@@ -13,8 +14,31 @@ topology:
 
     dc1-svr1:
       kind: linux
-      image: alpine
+      image: ubuntu
+
+
+    # DC2
+    dc2-core1:
+      kind: ceos
+      image: ceos:4.30.1F
+
+    dc2-asw1:
+      kind: ceos
+      image: ceos:4.30.1F
+
+    dc2-svr2:
+      kind: linux
+      image: ubuntu
 
   links:
+    # inter DC1-DC2 link
+    - endpoints: ["dc1-core1:eth10", "dc2-core1:eth10"]
+
+    # intra DC1 links
     - endpoints: ["dc1-core1:eth1", "dc1-asw1:eth1"]
     - endpoints: ["dc1-asw1:eth2", "dc1-svr1:eth1"]
+
+    # intra DC2 links
+    - endpoints: ["dc2-core1:eth1", "dc2-asw1:eth1"]
+    - endpoints: ["dc2-asw1:eth2", "dc2-svr2:eth1"]
+
